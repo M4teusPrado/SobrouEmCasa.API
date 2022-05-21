@@ -26,7 +26,7 @@ Requisições para a API devem seguir os padrões:
 
 # Login
 
-## usuarios [{{path}}/login]
+## usuarios [url/login]
 
 Rota destinada para autenticação de login 
 
