@@ -1,4 +1,4 @@
- package com.pa.sobrouemcasa.controller;
+ package com.pa.sobrouemcasa.model.controller;
 
 import com.pa.sobrouemcasa.dto.UsuarioLoginDTO;
 import com.pa.sobrouemcasa.model.Usuario;
@@ -19,9 +19,12 @@ public class LoginController {
     @Autowired
     private LoginService loginService;
 
-    @GetMapping()
-    public String index() {
-        return null;
+    @Autowired
+    private UsuarioService usuarioService ;
+
+    @PostMapping("/cadastrar")
+    public ResponseEntity<Usuario> cadastrar(@RequestBody Usuario usuario) {
+        return ResponseEntity.ok().body(usuarioService.saveUsuario(usuario));
     }
 
     @PostMapping()

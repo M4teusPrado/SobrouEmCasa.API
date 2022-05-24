@@ -1,4 +1,4 @@
-package com.pa.sobrouemcasa.controller;
+package com.pa.sobrouemcasa.model.controller;
 
 import com.pa.sobrouemcasa.model.Usuario;
 import com.pa.sobrouemcasa.service.UsuarioService;
