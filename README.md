@@ -141,3 +141,8 @@ Rota destinada para autenticação de login
               "error": "Not Found",
               "trace": "org.springframework.web.server.ResponseStatusException: 404 NOT_FOUND \"Usuario não encontrado\"
           }
+          
+ ### Verificações 
+ -  Verifica os campos obrigatorios
+ -  Verifica se o CPF enviado ja existe em base de dados
+ -  Verifica se o Email enviado ja existe em base de dados
