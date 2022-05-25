@@ -1,4 +1,4 @@
- package com.pa.sobrouemcasa.model.controller;
+ package com.pa.sobrouemcasa.controller;
 
 import com.pa.sobrouemcasa.dto.UsuarioLoginDTO;
 import com.pa.sobrouemcasa.model.Usuario;
@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import javax.validation.Valid;
 import java.net.URI;
 import java.util.List;
 
@@ -23,7 +24,7 @@ public class LoginController {
     private UsuarioService usuarioService ;
 
     @PostMapping("/cadastrar")
-    public ResponseEntity<Usuario> cadastrar(@RequestBody Usuario usuario) {
+    public ResponseEntity<Usuario> cadastrar(@Valid @RequestBody Usuario usuario) {
         return ResponseEntity.ok().body(usuarioService.saveUsuario(usuario));
     }
 
