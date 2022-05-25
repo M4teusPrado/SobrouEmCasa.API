@@ -108,6 +108,11 @@ Model: Camada onde é possível criar as entidades
 
 Repository: Tem como funcionalidade salvar armazenar entidades
 
+### Diagramas de classes
+
+![image](https://user-images.githubusercontent.com/59894662/170164377-a852e777-e3a1-4fd5-a22c-a1fc1bdaa52e.png)
+
+
 
 # Login
 
