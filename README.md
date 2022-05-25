@@ -119,19 +119,10 @@ Rota destinada para autenticação de login
 
 + Response 200 (application/json)
 
-          {
-              "id": 1,
-              "nome": "Mateus",
-              "login": "mateus.prado",
-              "senha": "123",
-              "tipoUsuario": "RESPONSAVEL",
-              "cpf": "469.006.198-00",
-              "email": "mateus.silvaprado@gmail.com",
-              "genero": "MASCULINO",
-              "dataNascimento": "2001-08-18T00:00:00.000+00:00",
-              "telefone": "(15)32424536",
-              "celular": "(15)988047229"
-          }
+        {
+            "email": "mateus.silvaprado@gmail.com",
+            "senha": "123"
+        }
 
 + Response 404 [Usuario não encontrado] (application/json)
 
@@ -141,6 +132,26 @@ Rota destinada para autenticação de login
               "error": "Not Found",
               "trace": "org.springframework.web.server.ResponseStatusException: 404 NOT_FOUND \"Usuario não encontrado\"
           }
+          
+## usuarios [url/login/cadastrar]
+
+Rota destinada para cadastrar um novo usuario
+
+
++ Response 200 (application/json)
+
+        {
+            "nome": "Mateus",
+            "login": "mateus.prado",
+            "senha": "123",
+            "tipoUsuario": 0,
+            "cpf": "469.006.198-00",
+            "email": "mateus.silvaprado@gmail.com",
+            "genero": 0,
+            "dataNascimento": "2001-08-18",
+            "telefone": "(15)32424536",
+            "celular": "(15)988047229"
+        }
           
  ### Verificações 
  -  Verifica os campos obrigatorios
