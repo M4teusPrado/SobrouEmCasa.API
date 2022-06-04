@@ -5,10 +5,7 @@ import com.pa.sobrouemcasa.model.enums.TipoUsuarioEnum;
 import lombok.Data;
 import org.hibernate.validator.constraints.br.CPF;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import java.io.Serializable;
@@ -36,4 +33,6 @@ public class Usuario implements Serializable {
     private String telefone;
     private String celular;
 
+    @OneToOne(cascade = CascadeType.PERSIST)
+    private Endereco endereco;
 }
