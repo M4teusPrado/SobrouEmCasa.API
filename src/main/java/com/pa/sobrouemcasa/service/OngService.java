@@ -24,17 +24,7 @@ public class OngService {
         return ongRepository.save(ong);
     }
 
-    public Usuario getResponsavel(Long idResponsavel) {
-        Optional<Usuario> responsavel = usuarioService.getUsuarioById(idResponsavel);
-
-        responsavel.orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "ID do Responsavel informado não localizado"));
-        if(responsavel.get().getTipoUsuario().equals(TipoUsuarioEnum.DOADOR))
-            throw new ResponseStatusException( HttpStatus.BAD_REQUEST, "Usuario não é cadastrado como um Responsavel");
-        return responsavel.get();
-    }
-
-    public Ong cadastroOng(Ong ong, long idResponsavel) {
-        ong.setResponsavel(getResponsavel(idResponsavel));
+    public Ong cadastroOng(Ong ong) {
         return saveOng(ong);
     }
 }
