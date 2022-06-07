@@ -1,8 +1,10 @@
  package com.pa.sobrouemcasa.controller;
 
 import com.pa.sobrouemcasa.dto.UsuarioLoginDTO;
+import com.pa.sobrouemcasa.model.Doador;
 import com.pa.sobrouemcasa.model.Ong;
 import com.pa.sobrouemcasa.model.Usuario;
+import com.pa.sobrouemcasa.service.DoadorService;
 import com.pa.sobrouemcasa.service.LoginService;
 import com.pa.sobrouemcasa.service.OngService;
 import com.pa.sobrouemcasa.service.UsuarioService;
@@ -23,7 +25,7 @@ public class LoginController {
     private LoginService loginService;
 
     @Autowired
-    private UsuarioService usuarioService ;
+    private DoadorService doadorService;
 
     @Autowired
     private OngService ongService;
@@ -34,8 +36,8 @@ public class LoginController {
     }
 
     @PostMapping("/cadastrar/pf")
-    public ResponseEntity<Usuario> cadastrar(@Valid @RequestBody Usuario usuario) {
-        return ResponseEntity.ok().body(usuarioService.saveUsuario(usuario));
+    public ResponseEntity<Doador> cadastrar(@Valid @RequestBody Doador doador) {
+        return ResponseEntity.ok().body(doadorService.cadastrarDoador(doador));
     }
 
     @PostMapping("cadastrar/pj")
