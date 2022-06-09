@@ -16,6 +16,11 @@ public class DoadorController {
     @Autowired
     private DoadorService doadorService;
 
+    @GetMapping("{id}")
+    public ResponseEntity<Doador> getDoadorById(@PathVariable Long id){
+        return ResponseEntity.ok().body(doadorService.getDoadorById(id));
+    }
+
     @PutMapping("{id}")
     public ResponseEntity<Doador> updateDoador(@PathVariable Long id,  @RequestBody DoadorDTO doador) {
         return ResponseEntity.ok().body(doadorService.updateDoador(id,doador));
