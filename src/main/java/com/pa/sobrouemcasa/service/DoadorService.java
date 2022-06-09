@@ -38,4 +38,9 @@ public class DoadorService {
         if(doadorDTO.getEndereco() != null) doador.setEndereco(doadorDTO.getEndereco());
         if(doadorDTO.getSenha() != null) doador.setSenha(doadorDTO.getSenha());
     }
+
+    public void deleteDoador(Long id) {
+        getDoadorById(id);
+        doadorRepository.deleteById(id);
+    }
 }

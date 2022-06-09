@@ -25,4 +25,10 @@ public class DoadorController {
     public ResponseEntity<Doador> updateDoador(@PathVariable Long id,  @RequestBody DoadorDTO doador) {
         return ResponseEntity.ok().body(doadorService.updateDoador(id,doador));
     }
+
+    @DeleteMapping("{id}")
+    public ResponseEntity<Void> deleteDoador(@PathVariable Long id) {
+        doadorService.deleteDoador(id);
+        return ResponseEntity.noContent().build();
+    }
 }
