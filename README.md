@@ -1,3 +1,4 @@
+
 # SobrouEmCasa.API
 
 ## Métodos
@@ -116,7 +117,7 @@ Repository: Tem como funcionalidade salvar armazenar entidades
 
 # Login
 
-## usuarios [url/login]
+## usuarios [url/logar]
 
 Rota destinada para autenticação de login 
 
@@ -129,6 +130,125 @@ Rota destinada para autenticação de login
             "senha": "123"
         }
 
+
+          
+## usuarios [url/cadastrar/pf]
+
+Rota destinada para cadastrar um novo usuario, do tipo doador
+
+
++ Response 200 (application/json)
+
+        {
+        "nome": "Mateus",
+        "login": "mateus.prado",
+        "senha": "123",
+        "tipoUsuario": 0,
+        "cpf": "469.006.198-00",
+        "email": "mateus.silvaprado@gmail.com",
+        "genero": 0,
+        "dataNascimento": "2001-08-18",
+        "telefone": "(15)32424536",
+        "celular": "(15)988047229", 
+        "endereco": {
+            "cep": "18117140",
+            "estado": "SP",
+            "cidade": "Votorantim",
+            "bairro": "Jardim serrano",
+            "rua": "Rua Ana Marina do espirito Santo",
+            "numero": 126
+            }
+        }
+          
+ ### Verificações 
+ -  Verifica os campos obrigatorios
+ -  Verifica se o CPF enviado ja existe em base de dados
+ -  Verifica se o Email enviado ja existe em base de dados
+
+
+## usuarios [url/cadastrar/pj]
+
+Rota destinada para cadastrar um novo usuario, do tipo PJ
+
+
++ Response 200 (application/json)
+
+        {
+        "nome": "Mateus",
+        "login": "mateus.prado",
+        "senha": "123",
+        "tipoUsuario": 0,
+        "cpf": "469.006.198-00",
+        "email": "mateus.silvaprado@gmail.com",
+        "genero": 0,
+        "dataNascimento": "2001-08-18",
+        "telefone": "(15)32424536",
+        "celular": "(15)988047229", 
+        "endereco": {
+            "cep": "18117140",
+            "estado": "SP",
+            "cidade": "Votorantim",
+            "bairro": "Jardim serrano",
+            "rua": "Rua Ana Marina do espirito Santo",
+            "numero": 126
+        },
+        "nomeInstituicao": "Shoope",
+        "cnpj": "18188181818",
+        "finalidadeInstitucional": "Fazer bem para a sociedade moderna",
+        "dataConstituicao": "2010-10-18"
+        }
+          
+ ### Verificações 
+ -  Verifica os campos obrigatorios
+ -  Verifica se o CPF enviado ja existe em base de dados
+ -  Verifica se o CPJ enviado ja existe em base de dados
+ -  Verifica se o Email enviado ja existe em base de dados
+
+
+# Doador
+
+## doador [url/doador/{id}]
+
+Rota destinada para atualização dos dados do Doador
+
+### ATUALIZAR [PUT]
+
+
+    {
+        "nome": "Mateus",
+        "descricao": "teste teste teste",
+        "senha": "123"
+    }
+    
+## doador [url/doador/{id}]
+
+Rota destinada para obter um usuario
+
+### OBTER DOADOR [GET]
+
++ Response 200 (application/json)
+
+        {
+        "nome": "Mateus",
+        "login": "mateus.prado",
+        "senha": "123",
+        "tipoUsuario": 0,
+        "cpf": "469.006.198-00",
+        "email": "mateus.silvaprado@gmail.com",
+        "genero": 0,
+        "dataNascimento": "2001-08-18",
+        "telefone": "(15)32424536",
+        "celular": "(15)988047229", 
+        "endereco": {
+            "cep": "18117140",
+            "estado": "SP",
+            "cidade": "Votorantim",
+            "bairro": "Jardim serrano",
+            "rua": "Rua Ana Marina do espirito Santo",
+            "numero": 126
+            }
+        }
+
 + Response 404 [Usuario não encontrado] (application/json)
 
           {
@@ -137,28 +257,3 @@ Rota destinada para autenticação de login
               "error": "Not Found",
               "trace": "org.springframework.web.server.ResponseStatusException: 404 NOT_FOUND \"Usuario não encontrado\"
           }
-          
-## usuarios [url/login/cadastrar]
-
-Rota destinada para cadastrar um novo usuario
-
-
-+ Response 200 (application/json)
-
-        {
-            "nome": "Mateus",
-            "login": "mateus.prado",
-            "senha": "123",
-            "tipoUsuario": 0,
-            "cpf": "469.006.198-00",
-            "email": "mateus.silvaprado@gmail.com",
-            "genero": 0,
-            "dataNascimento": "2001-08-18",
-            "telefone": "(15)32424536",
-            "celular": "(15)988047229"
-        }
-          
- ### Verificações 
- -  Verifica os campos obrigatorios
- -  Verifica se o CPF enviado ja existe em base de dados
- -  Verifica se o Email enviado ja existe em base de dados
