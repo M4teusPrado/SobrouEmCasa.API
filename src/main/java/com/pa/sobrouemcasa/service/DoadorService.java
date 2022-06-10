@@ -27,16 +27,20 @@ public class DoadorService {
     }
 
     public Doador updateDoador(Long id, DoadorDTO doadorDTO) {
-        try {
-            Optional<Doador> doador = doadorRepository.findById(id);
+        Doador doador = getDoadorById(id);
+        setValuesDTO(doadorDTO, doador);
+        return cadastrarDoador(doador);
+    }
 
-            doador.get().setDescricao(doadorDTO.getDescricao());
-            return  cadastrarDoador(doador.get());
+    public void setValuesDTO(DoadorDTO doadorDTO, Doador doador) {
+        if(doadorDTO.getNome() != null) doador.setNome(doadorDTO.getNome());
+        if(doadorDTO.getDescricao() != null) doador.setDescricao(doadorDTO.getDescricao());
+        if(doadorDTO.getEndereco() != null) doador.setEndereco(doadorDTO.getEndereco());
+        if(doadorDTO.getSenha() != null) doador.setSenha(doadorDTO.getSenha());
+    }
 
-
-        }
-        catch(EntityNotFoundException ex){
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Administrador não encontrado");
-        }
+    public void deleteDoador(Long id) {
+        getDoadorById(id);
+        doadorRepository.deleteById(id);
     }
 }
