@@ -257,3 +257,52 @@ Rota destinada para obter um usuario
               "error": "Not Found",
               "trace": "org.springframework.web.server.ResponseStatusException: 404 NOT_FOUND \"Usuario não encontrado\"
           }
+          
+
+### OBTER DOADOR [GET]
+
++ Response 200 (application/json)
+
+        {
+        "nome": "Mateus",
+        "login": "mateus.prado",
+        "senha": "123",
+        "tipoUsuario": 0,
+        "cpf": "469.006.198-00",
+        "email": "mateus.silvaprado@gmail.com",
+        "genero": 0,
+        "dataNascimento": "2001-08-18",
+        "telefone": "(15)32424536",
+        "celular": "(15)988047229", 
+        "endereco": {
+            "cep": "18117140",
+            "estado": "SP",
+            "cidade": "Votorantim",
+            "bairro": "Jardim serrano",
+            "rua": "Rua Ana Marina do espirito Santo",
+            "numero": 126
+            }
+        }
+
++ Response 404 [Usuario não encontrado] (application/json)
+
+          {
+              "timestamp": "2022-05-21T21:26:57.874+00:00",
+              "status": 404,
+              "error": "Not Found",
+              "trace": "org.springframework.web.server.ResponseStatusException: 404 NOT_FOUND \"Usuario não encontrado\"
+          }
+          
+### DELETAR DOADOR [DEL]
+
++ Response 204 No Content 
+
++ Response 404 [Usuario não encontrado] (application/json)
+
+          {
+              "timestamp": "2022-05-21T21:26:57.874+00:00",
+              "status": 404,
+              "error": "Not Found",
+              "trace": "org.springframework.web.server.ResponseStatusException: 404 NOT_FOUND \"Usuario não encontrado\"
+          }
+
